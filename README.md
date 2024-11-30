@@ -1,8 +1,23 @@
-# How to rapidly deploy: 
+# Geomap Builder
+
+![GeomapBuilder](doc/img/screenshot1.png "Grafana Geomap Builder")
+
+This is s small stack built with docker.compose to spin up in 0 time a grafana dashboard with geomap and some data points.
+
+The basics are: 
+* All the data is gathered from some script
+* All the data is stored in mariadb which is used as a main datasource for grafana
+* The data can be queried from Grafana in many ways and rendered as geo data points in the geomap plugin.
+* Everything spins up automatically by launching either a shell script for local/dev envs, ec2,... or via Terraform as IaaC for production envs. 
+
+
+# How to fast deploy: 
 
 This will spin up the containers in a local or testing envronment.
 
-Just run: 
+**BEFORE ANYTHING: Ensure all the secrets are created with the proper name into AWS SSM Parameter Store and encryoted.**
+
+Then just run: 
 
     chmod +x deployer.sh && . ./deployer.sh 
 
@@ -77,7 +92,7 @@ The deployer script spins up:
 
 
 # TODO: 
-
+* automate importing grafana dashboard
 * automate getting RDS/mariadb endpoint directly into grafana CFG ( use SSM It's easy ) 
 * automate getting prometheus endpoint to configure it also in grafana ( it would b nice to have historic data over time, to show some figures and progress)
 
