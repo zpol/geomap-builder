@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS geoip;
+
+USE geoip;
+
+CREATE TABLE geoip_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    public_ip_addr VARCHAR(45) NOT NULL,
+    lat DECIMAL(10, 7) NOT NULL,
+    lon DECIMAL(10, 7) NOT NULL,
+    metadata VARCHAR(200) DEFAULT NULL
+);
