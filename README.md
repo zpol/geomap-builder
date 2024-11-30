@@ -11,6 +11,14 @@ The basics are:
 * Everything spins up automatically by launching either a shell script for local/dev envs, ec2,... or via Terraform as IaaC for production envs. 
 
 
+# Prerequisites
+
+* AWS Account
+* AWS access keys with SSM access to at least read the parameters and it's values.
+* AWS CLI installed & configured
+* A Linux environment or bash shell.
+* Have the secrets created & encrypted in the Parameter store
+
 # How to fast deploy: 
 
 This will spin up the containers in a local or testing envronment.
@@ -92,6 +100,7 @@ The deployer script spins up:
 
 
 # TODO: 
+* Basic Infra diagram & data workflow
 * automate importing grafana dashboard
 * automate getting RDS/mariadb endpoint directly into grafana CFG ( use SSM It's easy ) 
 * automate getting prometheus endpoint to configure it also in grafana ( it would b nice to have historic data over time, to show some figures and progress)
