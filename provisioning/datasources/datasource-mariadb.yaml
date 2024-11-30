@@ -5,8 +5,8 @@ datasources:
     type: mysql
     access: proxy
     url: ${MYSQL_HOST}
-    database: "geoip"
-    user: "geoip"
+    database: "geoip" #TODO
+    user: "geoip" #TODO
     secureJsonData:
       password: "${MYSQL_PASSWORD}"
     isDefault: true
